@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9117BFD21E1E336400590C49 /* ServiceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD11E1E336400590C49 /* ServiceControllerTests.swift */; };
+		9117BFD41E1EB60B00590C49 /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD31E1EB60B00590C49 /* ServiceController.swift */; };
+		9117BFD61E1EB62E00590C49 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD51E1EB62E00590C49 /* URLSessionProtocol.swift */; };
+		9117BFD71E1EB62E00590C49 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD51E1EB62E00590C49 /* URLSessionProtocol.swift */; };
+		9117BFD81E1EB78D00590C49 /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD31E1EB60B00590C49 /* ServiceController.swift */; };
+		9117BFDA1E1EBAB200590C49 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD91E1EBAB200590C49 /* MockURLSession.swift */; };
+		9117BFE11E1EE33500590C49 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */; };
 		911D00011E1174BB00D9C124 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D00001E1174BB00D9C124 /* CollectionViewCellViewModel.swift */; };
 		911D00021E1174BB00D9C124 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D00001E1174BB00D9C124 /* CollectionViewCellViewModel.swift */; };
 		911D00041E11CD2F00D9C124 /* CollectionViewSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D00031E11CD2F00D9C124 /* CollectionViewSectionHeaderViewModel.swift */; };
@@ -64,6 +71,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9117BFD11E1E336400590C49 /* ServiceControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceControllerTests.swift; sourceTree = "<group>"; };
+		9117BFD31E1EB60B00590C49 /* ServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceController.swift; sourceTree = "<group>"; };
+		9117BFD51E1EB62E00590C49 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		9117BFD91E1EBAB200590C49 /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		911D00001E1174BB00D9C124 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		911D00031E11CD2F00D9C124 /* CollectionViewSectionHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeaderViewModel.swift; sourceTree = "<group>"; };
 		911D00061E11D10300D9C124 /* CollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -120,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9117BFD01E1E32E000590C49 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9117BFD31E1EB60B00590C49 /* ServiceController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		911D00101E129DA000D9C124 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +166,8 @@
 				911D00141E129E5B00D9C124 /* MockCollectionViewModel.swift */,
 				911D00161E12A56800D9C124 /* MockCollectionViewCellViewModel.swift */,
 				911D00181E12BC5C00D9C124 /* MockCollectionViewSectionHeaderViewModel.swift */,
+				9117BFD91E1EBAB200590C49 /* MockURLSession.swift */,
+				9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -186,6 +208,7 @@
 				911DFFFA1E115F1C00D9C124 /* CollectionViewControllerProtocol.swift */,
 				911D00061E11D10300D9C124 /* CollectionViewCellProtocol.swift */,
 				911D000D1E127E9900D9C124 /* CollectionViewSectionHeaderProtocol.swift */,
+				9117BFD51E1EB62E00590C49 /* URLSessionProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -211,6 +234,7 @@
 		91BA35401E0D964700ED0252 /* PhotoBook */ = {
 			isa = PBXGroup;
 			children = (
+				9117BFD01E1E32E000590C49 /* Controllers */,
 				91604E4C1E0D9B5D00CD07E1 /* Protocols */,
 				91604E4B1E0D9B5600CD07E1 /* ViewModel */,
 				91604E4A1E0D9B5100CD07E1 /* Model */,
@@ -238,6 +262,7 @@
 				911D00121E129E1A00D9C124 /* CollectionViewControllerTests.swift */,
 				911D001F1E12D13000D9C124 /* CollectionViewCellTests.swift */,
 				911D00211E12D14300D9C124 /* CollectionViewSectionHeaderTests.swift */,
+				9117BFD11E1E336400590C49 /* ServiceControllerTests.swift */,
 			);
 			path = PhotoBookTests;
 			sourceTree = "<group>";
@@ -345,11 +370,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9117BFD61E1EB62E00590C49 /* URLSessionProtocol.swift in Sources */,
 				91604E521E0DA1BD00CD07E1 /* CollectionViewController.swift in Sources */,
 				91BA35421E0D964700ED0252 /* AppDelegate.swift in Sources */,
 				916D5F471E102E24008D2991 /* City.swift in Sources */,
 				91604E551E0DA20500CD07E1 /* CollectionViewCell.swift in Sources */,
 				911DFFF81E115D9F00D9C124 /* CollectionViewModel.swift in Sources */,
+				9117BFD41E1EB60B00590C49 /* ServiceController.swift in Sources */,
 				911D000E1E127E9900D9C124 /* CollectionViewSectionHeaderProtocol.swift in Sources */,
 				91604E581E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */,
 				916D5F4A1E102FFF008D2991 /* Album.swift in Sources */,
@@ -365,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9117BFD71E1EB62E00590C49 /* URLSessionProtocol.swift in Sources */,
 				911D00131E129E1A00D9C124 /* CollectionViewControllerTests.swift in Sources */,
 				911D00151E129E5B00D9C124 /* MockCollectionViewModel.swift in Sources */,
 				911D00251E12D1C000D9C124 /* UIImageViewStub.swift in Sources */,
@@ -380,6 +408,7 @@
 				911D000F1E127E9900D9C124 /* CollectionViewSectionHeaderProtocol.swift in Sources */,
 				91604E561E0DA20500CD07E1 /* CollectionViewCell.swift in Sources */,
 				91604E591E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */,
+				9117BFDA1E1EBAB200590C49 /* MockURLSession.swift in Sources */,
 				916D5F4B1E102FFF008D2991 /* Album.swift in Sources */,
 				911DFFFC1E115F1C00D9C124 /* CollectionViewControllerProtocol.swift in Sources */,
 				911D00201E12D13000D9C124 /* CollectionViewCellTests.swift in Sources */,
@@ -390,7 +419,10 @@
 				911DFFF31E115B5400D9C124 /* CollectionViewModelTests.swift in Sources */,
 				911DFFEF1E111FF000D9C124 /* CityTests.swift in Sources */,
 				911D00081E11D10300D9C124 /* CollectionViewCellProtocol.swift in Sources */,
+				9117BFE11E1EE33500590C49 /* MockURLSessionDataTask.swift in Sources */,
+				9117BFD21E1E336400590C49 /* ServiceControllerTests.swift in Sources */,
 				911DFFFF1E115F8400D9C124 /* MockCollectionViewController.swift in Sources */,
+				9117BFD81E1EB78D00590C49 /* ServiceController.swift in Sources */,
 				916D5F4D1E103933008D2991 /* AlbumTests.swift in Sources */,
 				911D00221E12D14300D9C124 /* CollectionViewSectionHeaderTests.swift in Sources */,
 			);
