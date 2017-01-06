@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Photo: NSObject {
     
@@ -22,6 +23,24 @@ class Photo: NSObject {
     let isoKey = "iso"
     let commentKey = "comment"
     
+    weak var listener:DownloadListenerProtocol?
+    
+    var serviceController = ServiceController()
+    
+    var baseURL = "http://www.asmtechnology.com/apress2017/"
+    
+    private var image: UIImage?
+    
+    var downloadedImage: UIImage? {
+        get {
+            
+            if image == nil {
+                downloadImage()
+            }
+            
+            return image
+        }
+    }
     
     init?(_ dictionary:[String : AnyObject]?) {
         
@@ -43,4 +62,26 @@ class Photo: NSObject {
         self.comments = comments
     }
     
+    func downloadImage() -> Void {
+        
+        guard let urlToFetch  = buildImageDownloadURL() else {
+            return
+        }
+        
+        serviceController.fetchFromURL(urlString: urlToFetch,
+                                       success: { (data) in
+                                        self.image = UIImage(data: data)
+                                        self.listener?.didDownloadImage()
+        }, failure: { (error) in
+            // do nothing.
+        })
+    }
+    
+    func buildImageDownloadURL() -> String? {
+        guard let imageName = imageName else {
+            return nil
+        }
+        
+        return "\(baseURL)\(imageName)"
+    }
 }

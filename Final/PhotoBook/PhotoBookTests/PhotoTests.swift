@@ -130,4 +130,113 @@ class PhotoTests: XCTestCase {
         let photo = Photo(validPhotoDictionary1)
         XCTAssertEqual(photo!.comments!, validPhotoDictionary1?[commentKey] as! String)
     }
+    
+    func testInit_ValidDictionary_downloadedImage_IsNil() {
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = true
+
+        let photo = Photo(validPhotoDictionary1)
+        photo?.serviceController = mockServiceController
+        
+        XCTAssertNil(photo?.downloadedImage)
+    }
+    
+    func testInit_ValidDictionary_whenDownloadedImageIsCalled_callsDownloadImage() {
+        
+        let expectation = self.expectation(description: "Expected downloadImage to be called")
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = true
+        
+        let photo = MockPhoto(validPhotoDictionary1)
+        photo?.downloadImageExpectation = expectation
+        photo?.imageName = "11.jpg"
+        photo?.baseURL = "http://www.asmtechnology.com/apress2017/"
+        photo?.serviceController = mockServiceController
+        
+        let _ = photo?.downloadedImage
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testBuildImageDownloadURL_nilImageName_returnsNil() {
+        let photo = Photo(validPhotoDictionary1)
+        photo?.imageName = nil
+        XCTAssertNil(photo!.buildImageDownloadURL())
+    }
+    
+    func testBuildImageDownloadURL_validBaseURL_validImageName_returnsCorrectImageURL() {
+        let photo = Photo(validPhotoDictionary1)
+        photo?.imageName = "11.jpg"
+        photo?.baseURL = "http://www.asmtechnology.com/apress2017/"
+        
+        let expectedURL = "http://www.asmtechnology.com/apress2017/11.jpg"
+        XCTAssertEqual(photo!.buildImageDownloadURL(), expectedURL)
+    }
+    
+    func testDownloadImage_validImageURL_callsFromFetchURLonServiceController_withExpectedURL() {
+        
+        let expectation = self.expectation(description: "Expected fetchURL to be called")
+        let expectedURL = "http://www.asmtechnology.com/apress2017/11.jpg"
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.fetchFromURLExpectation = (expectation, expectedURL)
+        
+        let photo = Photo(validPhotoDictionary1)
+        photo?.imageName = "11.jpg"
+        photo?.baseURL = "http://www.asmtechnology.com/apress2017/"
+        photo?.serviceController = mockServiceController
+        
+        photo?.downloadImage()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testDownloadImage_validImageURL_serviceControllerReturnsValidData_updatesImage()  {
+        
+        let bundle = Bundle(for: type(of:self))
+        let filePath = bundle.path(forResource: "bar1", ofType: "jpg")
+        let stubResponseData = try! Data(contentsOf: URL(fileURLWithPath: filePath!))
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = false
+        mockServiceController.dataToReturnOnSuccess = stubResponseData
+        
+        let photo = Photo(validPhotoDictionary1)
+        photo?.imageName = "11.jpg"
+        photo?.baseURL = "http://www.asmtechnology.com/apress2017/"
+        photo?.serviceController = mockServiceController
+        
+        photo?.downloadImage()
+        
+        XCTAssertNotNil(photo?.downloadedImage)
+    }
+    
+    
+    func testDownloadImage_validImageURL_validListener_calls_didDownloadImage_onListener()  {
+        
+        let expectation = self.expectation(description: "Expected fetchURL to be called")
+        let mockDownloadListener = MockDownloadListener()
+        mockDownloadListener.didDownloadImageExpectation = expectation
+        
+        let bundle = Bundle(for: type(of:self))
+        let filePath = bundle.path(forResource: "bar1", ofType: "jpg")
+        let stubResponseData = try! Data(contentsOf: URL(fileURLWithPath: filePath!))
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = false
+        mockServiceController.dataToReturnOnSuccess = stubResponseData
+        
+        let photo = Photo(validPhotoDictionary1)
+        photo?.imageName = "11.jpg"
+        photo?.baseURL = "http://www.asmtechnology.com/apress2017/"
+        photo?.serviceController = mockServiceController
+        photo?.listener = mockDownloadListener
+        
+        photo?.downloadImage()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
 }

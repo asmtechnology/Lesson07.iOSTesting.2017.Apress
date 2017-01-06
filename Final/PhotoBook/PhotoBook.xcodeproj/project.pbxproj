@@ -50,6 +50,11 @@
 		91604E561E0DA20500CD07E1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604E541E0DA20500CD07E1 /* CollectionViewCell.swift */; };
 		91604E581E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604E571E0DA21900CD07E1 /* CollectionViewSectionHeader.swift */; };
 		91604E591E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91604E571E0DA21900CD07E1 /* CollectionViewSectionHeader.swift */; };
+		9168DD8F1E204F410009BEA7 /* bar1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9168DD8E1E204F410009BEA7 /* bar1.jpg */; };
+		9168DD911E20500F0009BEA7 /* MockPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168DD901E20500F0009BEA7 /* MockPhoto.swift */; };
+		9168DD931E20528A0009BEA7 /* DownloadListenerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168DD921E20528A0009BEA7 /* DownloadListenerProtocol.swift */; };
+		9168DD941E20528A0009BEA7 /* DownloadListenerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168DD921E20528A0009BEA7 /* DownloadListenerProtocol.swift */; };
+		9168DD961E2054B60009BEA7 /* MockDownloadListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168DD951E2054B60009BEA7 /* MockDownloadListener.swift */; };
 		916D5F441E102A04008D2991 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D5F431E102A04008D2991 /* Photo.swift */; };
 		916D5F451E102A04008D2991 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D5F431E102A04008D2991 /* Photo.swift */; };
 		916D5F471E102E24008D2991 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D5F461E102E24008D2991 /* City.swift */; };
@@ -105,6 +110,10 @@
 		91604E511E0DA1BD00CD07E1 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		91604E541E0DA20500CD07E1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		91604E571E0DA21900CD07E1 /* CollectionViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeader.swift; sourceTree = "<group>"; };
+		9168DD8E1E204F410009BEA7 /* bar1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bar1.jpg; sourceTree = "<group>"; };
+		9168DD901E20500F0009BEA7 /* MockPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPhoto.swift; sourceTree = "<group>"; };
+		9168DD921E20528A0009BEA7 /* DownloadListenerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadListenerProtocol.swift; sourceTree = "<group>"; };
+		9168DD951E2054B60009BEA7 /* MockDownloadListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDownloadListener.swift; sourceTree = "<group>"; };
 		916D5F431E102A04008D2991 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		916D5F461E102E24008D2991 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		916D5F491E102FFF008D2991 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -157,6 +166,7 @@
 		911D00111E129DAE00D9C124 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				9168DD8E1E204F410009BEA7 /* bar1.jpg */,
 				9117BFE41E1F7D0D00590C49 /* ValidAlbumList.json */,
 				91BA35581E0D964800ED0252 /* Info.plist */,
 			);
@@ -174,6 +184,8 @@
 				9117BFD91E1EBAB200590C49 /* MockURLSession.swift */,
 				9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */,
 				9117BFE21E1EEFF500590C49 /* MockServiceController.swift */,
+				9168DD901E20500F0009BEA7 /* MockPhoto.swift */,
+				9168DD951E2054B60009BEA7 /* MockDownloadListener.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -215,6 +227,7 @@
 				911D00061E11D10300D9C124 /* CollectionViewCellProtocol.swift */,
 				911D000D1E127E9900D9C124 /* CollectionViewSectionHeaderProtocol.swift */,
 				9117BFD51E1EB62E00590C49 /* URLSessionProtocol.swift */,
+				9168DD921E20528A0009BEA7 /* DownloadListenerProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -367,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9117BFE51E1F7D0D00590C49 /* ValidAlbumList.json in Resources */,
+				9168DD8F1E204F410009BEA7 /* bar1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +400,7 @@
 				9117BFD41E1EB60B00590C49 /* ServiceController.swift in Sources */,
 				911D000E1E127E9900D9C124 /* CollectionViewSectionHeaderProtocol.swift in Sources */,
 				91604E581E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */,
+				9168DD931E20528A0009BEA7 /* DownloadListenerProtocol.swift in Sources */,
 				916D5F4A1E102FFF008D2991 /* Album.swift in Sources */,
 				911DFFFB1E115F1C00D9C124 /* CollectionViewControllerProtocol.swift in Sources */,
 				911D00071E11D10300D9C124 /* CollectionViewCellProtocol.swift in Sources */,
@@ -408,6 +423,7 @@
 				911D00171E12A56800D9C124 /* MockCollectionViewCellViewModel.swift in Sources */,
 				91604E531E0DA1BD00CD07E1 /* CollectionViewController.swift in Sources */,
 				911DFFF11E112D2500D9C124 /* PhotoTests.swift in Sources */,
+				9168DD941E20528A0009BEA7 /* DownloadListenerProtocol.swift in Sources */,
 				911D00021E1174BB00D9C124 /* CollectionViewCellViewModel.swift in Sources */,
 				911D00191E12BC5C00D9C124 /* MockCollectionViewSectionHeaderViewModel.swift in Sources */,
 				916D5F481E102E24008D2991 /* City.swift in Sources */,
@@ -417,12 +433,14 @@
 				91604E591E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */,
 				9117BFDA1E1EBAB200590C49 /* MockURLSession.swift in Sources */,
 				9117BFE31E1EEFF500590C49 /* MockServiceController.swift in Sources */,
+				9168DD961E2054B60009BEA7 /* MockDownloadListener.swift in Sources */,
 				916D5F4B1E102FFF008D2991 /* Album.swift in Sources */,
 				911DFFFC1E115F1C00D9C124 /* CollectionViewControllerProtocol.swift in Sources */,
 				911D00201E12D13000D9C124 /* CollectionViewCellTests.swift in Sources */,
 				911D000C1E11D94800D9C124 /* CollectionViewCellViewModelTests.swift in Sources */,
 				911D001B1E12BE2D00D9C124 /* UICollectionViewStub.swift in Sources */,
 				916D5F451E102A04008D2991 /* Photo.swift in Sources */,
+				9168DD911E20500F0009BEA7 /* MockPhoto.swift in Sources */,
 				911D000A1E11D7F800D9C124 /* MockCollectionViewCell.swift in Sources */,
 				911DFFF31E115B5400D9C124 /* CollectionViewModelTests.swift in Sources */,
 				911DFFEF1E111FF000D9C124 /* CityTests.swift in Sources */,
