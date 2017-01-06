@@ -10,6 +10,8 @@ import Foundation
 
 class Album: NSObject {
     
+    var serviceController = ServiceController()
+    
     var cities:[City]?
     
     override init() {
@@ -20,22 +22,35 @@ class Album: NSObject {
         }
     }
     
-    func load(filePath:String?) -> Void {
+    func load(urlString:String?,
+              success:@escaping (Void) -> Void,
+              failure:@escaping (NSError) -> Void) -> Void {
         
-        guard let filePath = filePath,
-            let array = NSArray(contentsOfFile: filePath) as? [AnyObject] else {
-                return
-        }
-        
-        for item in array {
-            guard let dictionary = item as? [String : AnyObject] else {
-                continue
-            }
-            
-            if let city = City(dictionary) {
-                cities?.append(city)
-            }
-        }
+        serviceController.fetchFromURL(urlString: urlString,
+                                       success: { (receivedData) in
+                                        
+                                        guard let array = try? JSONSerialization.jsonObject(with: receivedData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray else {
+                                            
+                                            failure(NSError(domain: "PhotoBook.Album", code:200, userInfo: nil))
+                                            return
+                                        }
+                                        
+                                        for item in array! {
+                                            guard let dictionary = item as? [String : AnyObject] else {
+                                                continue
+                                            }
+                                            
+                                            if let city = City(dictionary) {
+                                                self.cities?.append(city)
+                                            }
+                                        }
+                                        
+                                        success()
+                                        
+        },
+                                       failure: { (error) in
+                                        failure(error)
+        })
         
     }
 }

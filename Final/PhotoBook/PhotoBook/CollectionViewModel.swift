@@ -22,8 +22,8 @@ class CollectionViewModel : NSObject {
             photoAlbum = Album()
         }
         
-        let path = Bundle.main.path(forResource: "Albums", ofType: "plist")
-        photoAlbum?.load(filePath:path)
+//        let path = Bundle.main.path(forResource: "Albums", ofType: "plist")
+//        photoAlbum?.load(filePath:path)
     }
     
     func performInitialViewSetup() {

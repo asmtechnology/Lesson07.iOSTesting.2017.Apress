@@ -10,19 +10,11 @@ import XCTest
 
 class AlbumTests: XCTestCase {
     
-    var emptyAlbumPlistFile: String?
-    var invalidAlbumPlistFile: String?
-    var invalidAlbumPlistFile2: String?
-    var validAlbumPlistFile: String?
+    let invalidURL:String = ""
+    let validAlbumListURL:String = "http://www.asmtechnology.com/apress2017/albumlist.json"
     
     override func setUp() {
         super.setUp()
-        
-        let bundle = Bundle(for: type(of:self))
-        emptyAlbumPlistFile = bundle.path(forResource: "EmptyAlbum", ofType: "plist")
-        invalidAlbumPlistFile = bundle.path(forResource: "InvalidAlbum", ofType: "plist")
-        invalidAlbumPlistFile2 = bundle.path(forResource: "InvalidAlbum2", ofType: "plist")
-        validAlbumPlistFile = bundle.path(forResource: "ValidAlbum", ofType: "plist")
     }
     
     override func tearDown() {
@@ -40,34 +32,113 @@ class AlbumTests: XCTestCase {
         XCTAssertEqual(album.cities?.count, 0)
     }
     
-    func testLoad_NilFilePath_DoesNotUpdateCitiesArray() {
+    func testLoad_nilURL_fails_withErrorCode101() {
+        
+        let expectation = self.expectation(description: "Expected failure block to be called with error code = 101")
+        
         let album = Album()
-        album.load(filePath: nil)
-        XCTAssertEqual(album.cities?.count, 0)
-    }
-
-    func testLoad_ValidFilePathWithNoCities_DoesNotUpdateCitiesArray() {
-        let album = Album()
-        album.load(filePath: emptyAlbumPlistFile)
-        XCTAssertEqual(album.cities?.count, 0)
-    }
-    
-    func testLoad_ValidFilePath_InvalidRootElementType_DoesNotUpdateCitiesArray() {
-        let album = Album()
-        album.load(filePath: invalidAlbumPlistFile)
-        XCTAssertEqual(album.cities?.count, 0)
-    }
-
-    func testLoad_ValidFilePath_ValidRootElementType_InvalidChildElementType_DoesNotUpdateCitiesArray() {
-        let album = Album()
-        album.load(filePath: invalidAlbumPlistFile2)
-        XCTAssertEqual(album.cities?.count, 0)
+        album.load(urlString: nil, success: { (Void) in
+            // do nothing
+        }, failure: { (error) in
+            if error.code == 101 {
+                expectation.fulfill()
+            }
+        })
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
     }
     
-    func testLoad_ValidFile_AddsExpectedNumberOfEntriestoCitiesArray() {
+    func testLoad_invalidURL_fails_withErrorCode101() {
+        
+        let expectation = self.expectation(description: "Expected failure block to be called with error code = 101")
+        
         let album = Album()
-        album.load(filePath: validAlbumPlistFile)
+        album.load(urlString: invalidURL, success: { (Void) in
+            // do nothing
+        }, failure: { (error) in
+            if error.code == 101 {
+                expectation.fulfill()
+            }
+        })
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    
+    func testLoad_validURL_callsFromFetchURLonServiceController_withExpectedURL() {
+        
+        let expectation = self.expectation(description: "Expected fetchURL to be called")
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.fetchFromURLExpectation = (expectation, validAlbumListURL)
+        
+        let album = Album()
+        album.serviceController = mockServiceController
+        
+        album.load(urlString: validAlbumListURL, success: { (Void) in
+            // do nothing
+        }, failure: { (error) in
+            // do nothing
+        })
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testLoad_validURL_failsWhenServiceControllerFails() {
+        let expectation = self.expectation(description: "Expected fetchURL to be called")
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = true
+        
+        let album = Album()
+        album.serviceController = mockServiceController
+        
+        album.load(urlString: validAlbumListURL, success: { (Void) in
+            // do nothing
+        }, failure: { (error) in
+            expectation.fulfill()
+        })
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testLoad_onServiceControllerFailure_doesNotUpdateCityArray() {
+
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = true
+        
+        let album = Album()
+        album.serviceController = mockServiceController
+        
+        album.load(urlString: validAlbumListURL, success: { (Void) in
+            // do nothing
+        }, failure: { (error) in
+            // do nothing
+        })
+        
+        XCTAssertEqual(album.cities?.count, 0)
+        
+    }
+    
+    func testLoad_validURL_serviceControllerReturnsValidData_citiesArrayHasExpectedCount() {
+
+        let bundle = Bundle(for: type(of:self))
+        let filePath = bundle.path(forResource: "ValidAlbumList", ofType: "json")
+        let stubResponseData = try! Data(contentsOf: URL(fileURLWithPath: filePath!))
+        
+        let mockServiceController = MockServiceController()
+        mockServiceController.shouldFailOnFetch = false
+        mockServiceController.dataToReturnOnSuccess = stubResponseData
+        
+        let album = Album()
+        album.serviceController = mockServiceController
+        
+        album.load(urlString: validAlbumListURL, success: { (Void) in
+            // do nothing
+        }, failure: { (error) in
+           // do nothing
+        })
+        
         XCTAssertEqual(album.cities?.count, 6)
     }
-    
 }

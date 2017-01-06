@@ -1,0 +1,438 @@
+[
+  {
+    "city": "Vienna (Austria)",
+    "photos": [
+      {
+        "imageName": "v1.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of a weekend market in Vienna."
+      },
+      {
+        "imageName": "v2.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of the opera house."
+      },
+      {
+        "imageName": "v3.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "HDR image of the exterior of the opera house."
+      }
+    ]
+  },
+  {
+    "city": "Rome (Italy)",
+    "photos": [
+      {
+        "imageName": "r1.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of a section of the Coliseum."
+      },
+      {
+        "imageName": "r2.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of the Coliseum."
+      },
+      {
+        "imageName": "r3.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "HDR image of the entrance to the Coliseum."
+      },
+      {
+        "imageName": "r4.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "HDR image of the interior of the Coliseum."
+      },
+      {
+        "imageName": "r5.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of the interior of the Coliseum."
+      },
+      {
+        "imageName": "r6.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of the exterior of the Coliseum."
+      },
+      {
+        "imageName": "r7.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of the interior of a chapel."
+      },
+      {
+        "imageName": "r8.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "A colourful roman building."
+      },
+      {
+        "imageName": "r9.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "Street-side drinking water."
+      },
+      {
+        "imageName": "r10.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "Inscription at entrance to Coliseum."
+      },
+      {
+        "imageName": "r11.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "Quaint Italian restaurant in Rome."
+      },
+      {
+        "imageName": "r12.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of the fountain at the Piazza Navona."
+      },
+      {
+        "imageName": "r13.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of the fountain at the Piazza Navona."
+      },
+      {
+        "imageName": "r14.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of the ceiling above the tomb of Raphael."
+      }
+    ]
+  },
+  {
+    "city": "Paris (France)",
+    "photos": [
+      {
+        "imageName": "par1.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "8s",
+        "iso": "100",
+        "comment": "Eiffel Tower at dusk (view from the Trocadéro)."
+      },
+      {
+        "imageName": "par2.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR image of La Bourse."
+      },
+      {
+        "imageName": "par3.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "Paris in autumn."
+      },
+      {
+        "imageName": "par4.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "Paris in autumn."
+      },
+      {
+        "imageName": "par5.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of an ornate fountain at Place de la Concorde."
+      },
+      {
+        "imageName": "par6.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of an ornate fountain at Place de la Concorde."
+      },
+      {
+        "imageName": "par7.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of an ornate fountain at Place de la Concorde."
+      },
+      {
+        "imageName": "par8.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "HDR image of Egyptian obelisk at Place de la Concorde."
+      },
+      {
+        "imageName": "par9.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "8s",
+        "iso": "100",
+        "comment": "Eiffel Tower."
+      },
+      {
+        "imageName": "par10.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "6s",
+        "iso": "100",
+        "comment": "HDR image of Eiffel Tower."
+      },
+      {
+        "imageName": "par11.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "Ceiling of the Galleries La Fayette department store."
+      }
+    ]
+  },
+  {
+    "city": "London (U.K)",
+    "photos": [
+      {
+        "imageName": "lon1.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "125",
+        "iso": "800",
+        "comment": "London Eye (view from Westminister bridge)."
+      },
+      {
+        "imageName": "lon2.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "800",
+        "comment": "Looking up at the London Eye."
+      },
+      {
+        "imageName": "lon3.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "400",
+        "comment": "HDR image of Tower bridge, taken from the Tower of London"
+      },
+      {
+        "imageName": "lon4.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "100",
+        "iso": "100",
+        "comment": "HDR image of Tower bridge, taken from tower hamlets."
+      },
+      {
+        "imageName": "lon5.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "3s",
+        "iso": "100",
+        "comment": "HDR Image of the National Gallery."
+      },
+      {
+        "imageName": "lon6.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "3s",
+        "iso": "100",
+        "comment": "Trafalgar square."
+      },
+      {
+        "imageName": "lon7.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "8s",
+        "iso": "100",
+        "comment": "Trafalgar square."
+      },
+      {
+        "imageName": "lon8.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "3s",
+        "iso": "100",
+        "comment": "Admiralty Arch"
+      },
+      {
+        "imageName": "lon9.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "8s",
+        "iso": "100",
+        "comment": "HDR image of Queen Victoria Memorial."
+      },
+      {
+        "imageName": "lon10.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "6s",
+        "iso": "100",
+        "comment": "HDR image of Buckingham palace."
+      }
+    ]
+  },
+  {
+    "city": "Barcelona (Spain)",
+    "photos": [
+      {
+        "imageName": "bar1.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "Rustic worn out door."
+      },
+      {
+        "imageName": "bar2.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "250",
+        "iso": "100",
+        "comment": "Taken at Gaudi's Park Güell in Barcelona."
+      },
+      {
+        "imageName": "bar3.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "800",
+        "iso": "100",
+        "comment": "Taken at La Ramblas in Barcelona."
+      },
+      {
+        "imageName": "bar4.jpg",
+        "aperture": "f4.0",
+        "shutterSpeed": "100",
+        "iso": "100",
+        "comment": "HDR Image, taken at La Ramblas in Barcelona."
+      },
+      {
+        "imageName": "bar5.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image, taken at La Ramblas in Barcelona."
+      },
+      {
+        "imageName": "bar6.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of the front face of Hotel Ramblas, taken at La Ramblas in Barcelona"
+      },
+      {
+        "imageName": "bar7.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "800",
+        "iso": "100",
+        "comment": "HDR image of rustic letterbox."
+      },
+      {
+        "imageName": "bar8.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "Centro Comercial Maremagnum."
+      },
+      {
+        "imageName": "bar9.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "400",
+        "iso": "100",
+        "comment": "HDR Image of gravelled backyard near Park Güell"
+      }
+    ]
+  },
+  {
+    "city": "Cadiz (Spain)",
+    "photos": [
+      {
+        "imageName": "cad1.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "650",
+        "iso": "100",
+        "comment": "HDR image of colorful alley."
+      },
+      {
+        "imageName": "cad2.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "250",
+        "iso": "100",
+        "comment": "HDR image of the entrance to Bodegas Sanatorios"
+      },
+      {
+        "imageName": "cad3.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "150",
+        "iso": "100",
+        "comment": "Sunset near the city of Cadiz."
+      },
+      {
+        "imageName": "cad4.jpg",
+        "aperture": "f4.0",
+        "shutterSpeed": "650",
+        "iso": "100",
+        "comment": "HDR Image, of a street leading to Caidz cathedral."
+      },
+      {
+        "imageName": "cad5.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "1600",
+        "iso": "100",
+        "comment": "HDR Image of Cadiz cathedral."
+      },
+      {
+        "imageName": "cad6.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "125",
+        "iso": "100",
+        "comment": "HDR Image of the interior of Cadiz cathedral."
+      },
+      {
+        "imageName": "cad7.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "80",
+        "iso": "100",
+        "comment": "HDR image of catacolmbs beneath Cadiz cathedral."
+      },
+      {
+        "imageName": "cad8.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "125",
+        "iso": "100",
+        "comment": "HDR Image of the interior of Cadiz cathedral."
+      },
+      {
+        "imageName": "cad9.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "125",
+        "iso": "100",
+        "comment": "HDR Image of the altar, Cadiz cathedral."
+      },
+      {
+        "imageName": "cad10.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "HDR Image of csthedral exterior"
+      },
+      {
+        "imageName": "cad11.jpg",
+        "aperture": "f2.8",
+        "shutterSpeed": "600",
+        "iso": "100",
+        "comment": "HDR Image of beach near Cadiz."
+      }
+    ]
+  }
+]

@@ -14,6 +14,8 @@
 		9117BFD81E1EB78D00590C49 /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD31E1EB60B00590C49 /* ServiceController.swift */; };
 		9117BFDA1E1EBAB200590C49 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFD91E1EBAB200590C49 /* MockURLSession.swift */; };
 		9117BFE11E1EE33500590C49 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */; };
+		9117BFE31E1EEFF500590C49 /* MockServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117BFE21E1EEFF500590C49 /* MockServiceController.swift */; };
+		9117BFE51E1F7D0D00590C49 /* ValidAlbumList.json in Resources */ = {isa = PBXBuildFile; fileRef = 9117BFE41E1F7D0D00590C49 /* ValidAlbumList.json */; };
 		911D00011E1174BB00D9C124 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D00001E1174BB00D9C124 /* CollectionViewCellViewModel.swift */; };
 		911D00021E1174BB00D9C124 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D00001E1174BB00D9C124 /* CollectionViewCellViewModel.swift */; };
 		911D00041E11CD2F00D9C124 /* CollectionViewSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911D00031E11CD2F00D9C124 /* CollectionViewSectionHeaderViewModel.swift */; };
@@ -76,6 +78,8 @@
 		9117BFD51E1EB62E00590C49 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		9117BFD91E1EBAB200590C49 /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
+		9117BFE21E1EEFF500590C49 /* MockServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockServiceController.swift; sourceTree = "<group>"; };
+		9117BFE41E1F7D0D00590C49 /* ValidAlbumList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ValidAlbumList.json; sourceTree = "<group>"; };
 		911D00001E1174BB00D9C124 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		911D00031E11CD2F00D9C124 /* CollectionViewSectionHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeaderViewModel.swift; sourceTree = "<group>"; };
 		911D00061E11D10300D9C124 /* CollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		911D00111E129DAE00D9C124 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				9117BFE41E1F7D0D00590C49 /* ValidAlbumList.json */,
 				91BA35581E0D964800ED0252 /* Info.plist */,
 			);
 			name = TestData;
@@ -168,6 +173,7 @@
 				911D00181E12BC5C00D9C124 /* MockCollectionViewSectionHeaderViewModel.swift */,
 				9117BFD91E1EBAB200590C49 /* MockURLSession.swift */,
 				9117BFE01E1EE33500590C49 /* MockURLSessionDataTask.swift */,
+				9117BFE21E1EEFF500590C49 /* MockServiceController.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9117BFE51E1F7D0D00590C49 /* ValidAlbumList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +416,7 @@
 				91604E561E0DA20500CD07E1 /* CollectionViewCell.swift in Sources */,
 				91604E591E0DA21900CD07E1 /* CollectionViewSectionHeader.swift in Sources */,
 				9117BFDA1E1EBAB200590C49 /* MockURLSession.swift in Sources */,
+				9117BFE31E1EEFF500590C49 /* MockServiceController.swift in Sources */,
 				916D5F4B1E102FFF008D2991 /* Album.swift in Sources */,
 				911DFFFC1E115F1C00D9C124 /* CollectionViewControllerProtocol.swift in Sources */,
 				911D00201E12D13000D9C124 /* CollectionViewCellTests.swift in Sources */,
