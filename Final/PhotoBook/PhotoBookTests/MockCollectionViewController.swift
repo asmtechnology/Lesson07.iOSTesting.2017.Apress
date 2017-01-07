@@ -27,4 +27,8 @@ class MockCollectionViewController : CollectionViewControllerProtocol {
         expectationForSetupCollectionViewCellToUseMaxWidth?.fulfill()
     }
     
+    func reloadCollectionView() {
+        
+    }
+    
 }

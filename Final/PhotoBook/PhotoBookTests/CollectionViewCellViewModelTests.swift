@@ -81,18 +81,6 @@ extension CollectionViewCellViewModelTests {
 
 // MARK: setup tests
 extension CollectionViewCellViewModelTests {
-    
-    func testSetup_ValidPhoto_Calls_LoadImage_WithExpectedImageName() {
-        
-        let expectation = self.expectation(description: "expected loadImage() to be called")
-        mockCollectionViewCell?.expectationForLoadImage = (expectation, validPhoto!.imageName!)
-        
-        let viewModel =  CollectionViewCellViewModel(model:validPhoto)
-        viewModel?.setView(mockCollectionViewCell!)
-        
-        viewModel?.setup()
-        self.waitForExpectations(timeout: 1.0, handler: nil)
-    }
 
     
     func testSetup_ValidPhoto_Calls_SetCaption_WithExpectedText() {

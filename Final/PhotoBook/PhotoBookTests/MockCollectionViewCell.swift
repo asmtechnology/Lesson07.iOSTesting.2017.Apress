@@ -15,20 +15,6 @@ class MockCollectionViewCell : CollectionViewCellProtocol {
     var expectationForSetCaption:(XCTestExpectation, String?)?
     var expectationForSetupShotDetails:(XCTestExpectation, String?)?
     
-    func loadImage(resourceName:String) {
-        guard let (expectation, expectedValue) = self.expectationForLoadImage else {
-            return
-        }
-
-        if let expectedValue = expectedValue {
-            if (resourceName.compare(expectedValue) != .orderedSame) {
-                return
-            }
-        }
-        
-        expectation.fulfill()
-    }
-    
     func setCaption(captionText:String) {
         guard let (expectation, expectedValue) = self.expectationForSetCaption else {
             return
@@ -57,4 +43,7 @@ class MockCollectionViewCell : CollectionViewCellProtocol {
         expectation.fulfill()
     }
     
+    func updateImage(image: UIImage?) {
+        
+    }
 }

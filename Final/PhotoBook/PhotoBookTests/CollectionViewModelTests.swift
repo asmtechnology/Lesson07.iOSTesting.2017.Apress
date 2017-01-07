@@ -12,9 +12,25 @@ class CollectionViewModelTests: XCTestCase {
     
     fileprivate var mockCollectionViewController:MockCollectionViewController?
     
+    fileprivate var stubResponseData:Data?
+    fileprivate var stubServiceController:MockServiceController?
+    fileprivate var albumWithStubbedServiceController:Album?
+    
     override func setUp() {
         super.setUp()
         mockCollectionViewController = MockCollectionViewController()
+        
+        let bundle = Bundle(for: type(of:self))
+        let filePath = bundle.path(forResource: "ValidAlbumList", ofType: "json")
+        stubResponseData = try! Data(contentsOf: URL(fileURLWithPath: filePath!))
+        
+        stubServiceController = MockServiceController()
+        stubServiceController!.shouldFailOnFetch = false
+        stubServiceController!.dataToReturnOnSuccess = stubResponseData!
+        
+        albumWithStubbedServiceController = Album()
+        albumWithStubbedServiceController!.serviceController = stubServiceController!
+        
     }
     
     override func tearDown() {
@@ -132,10 +148,9 @@ extension CollectionViewModelTests {
         
         XCTAssertEqual(viewModel.numberOfItemsInSection(1000), 0)
     }
-    
+
     func testNumberOfItemsInSection_ValidSectionIndex_ReturnsExpectedValue() {
-        let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
-        
+        let viewModel =  CollectionViewModel(view:mockCollectionViewController!, album:albumWithStubbedServiceController)
         XCTAssertEqual(viewModel.numberOfItemsInSection(0), viewModel.photoAlbum!.cities![0].photos!.count)
     }
     
@@ -161,12 +176,13 @@ extension CollectionViewModelTests {
     }
     
     func testCellViewModel_ValidViewModelNilPhotos_ReturnsNil() {
-        let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
+        let viewModel =  CollectionViewModel(view:mockCollectionViewController!, album:albumWithStubbedServiceController)
         viewModel.photoAlbum!.cities![0].photos = nil
         
         XCTAssertNil(viewModel.cellViewModel(indexPath:IndexPath(row: 0, section: 0)))
     }
     
+
     func testCellViewModel_NegtiveRowIndex_ReturnsNil() {
         let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
         
@@ -192,13 +208,12 @@ extension CollectionViewModelTests {
     }
     
     func testCellViewModel_ValidSectionIndex_DoesNotReturnNil() {
-        let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
-        
+        let viewModel =  CollectionViewModel(view:mockCollectionViewController!, album:albumWithStubbedServiceController)
         XCTAssertNotNil(viewModel.cellViewModel(indexPath:IndexPath(row: 0, section: 0)))
     }
-    
+
     func testCellViewModel_ValidSectionIndex_ReturnsViewModelWithExpectedModelObject() {
-        let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
+        let viewModel =  CollectionViewModel(view:mockCollectionViewController!, album:albumWithStubbedServiceController)
         
         let rowIndex = 0
         let sectionIndex = 0
@@ -243,13 +258,13 @@ extension CollectionViewModelTests {
     }
     
     func testHeaderViewModel_ValidSectionIndex_DoesNotReturnNil() {
-        let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
+        let viewModel =  CollectionViewModel(view:mockCollectionViewController!, album:albumWithStubbedServiceController)
         
         XCTAssertNotNil(viewModel.headerViewModel(indexPath:IndexPath(row: 0, section: 0)))
     }
     
     func testHeaderViewModel_ValidSectionIndex_ReturnsViewModelWithExpectedSectionTitle() {
-        let viewModel =  CollectionViewModel(view:mockCollectionViewController!)
+        let viewModel =  CollectionViewModel(view:mockCollectionViewController!, album:albumWithStubbedServiceController)
         
         let rowIndex = 0
         let sectionIndex = 0
