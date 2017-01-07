@@ -12,4 +12,5 @@ protocol CollectionViewControllerProtocol : class {
     func setNavigationTitle(_ title:String) -> Void
     func setSectionInset(top:Float, left:Float, bottom:Float, right:Float) -> Void
     func setupCollectionViewCellToUseMaxWidth() -> Void
+    func reloadCollectionView() -> Void
 }

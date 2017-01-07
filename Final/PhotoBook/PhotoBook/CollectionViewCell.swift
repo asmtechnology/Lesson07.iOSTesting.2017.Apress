@@ -23,16 +23,17 @@ class CollectionViewCell: UICollectionViewCell {
 
 extension CollectionViewCell : CollectionViewCellProtocol {
     
-    func loadImage(resourceName:String) {
-        imageView.image = UIImage(named: resourceName)
-    }
-    
     func setCaption(captionText:String) {
         captionLabel.text = captionText
     }
     
     func setShotDetails(shotDetailsText:String) {
         shotDetailsLabel.text = shotDetailsText
+    }
+    
+    func updateImage(image:UIImage?) {
+        imageView.image = image
+        self.setNeedsLayout()
     }
     
 }

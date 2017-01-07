@@ -104,4 +104,8 @@ extension CollectionViewController : CollectionViewControllerProtocol {
             collectionViewLayout.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.width * 0.6)
         }
     }
+    
+    func reloadCollectionView() -> Void {
+        self.collectionView?.reloadData()
+    }
 }

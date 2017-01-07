@@ -14,16 +14,21 @@ class CollectionViewModel : NSObject {
     
     weak var view:CollectionViewControllerProtocol?
     
-    init(view:CollectionViewControllerProtocol) {
+    init(view:CollectionViewControllerProtocol, album:Album? = nil) {
         super.init()
         self.view = view
         
-        if photoAlbum == nil {
-            photoAlbum = Album()
-        }
+        photoAlbum = album ?? Album()
         
-//        let path = Bundle.main.path(forResource: "Albums", ofType: "plist")
-//        photoAlbum?.load(filePath:path)
+        photoAlbum?.load(urlString: "http://www.asmtechnology.com/apress2017/albumlist.json",
+                         success: { () in
+                            DispatchQueue.main.async {
+                                self.view?.reloadCollectionView()
+                            }
+        },
+                         failure: { (error) in
+                            print(error.description)
+        })
     }
     
     func performInitialViewSetup() {

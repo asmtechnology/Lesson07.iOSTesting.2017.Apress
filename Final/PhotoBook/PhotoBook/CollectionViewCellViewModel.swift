@@ -21,6 +21,7 @@ class CollectionViewCellViewModel : NSObject {
         
         super.init()
         self.photo = model
+        photo?.listener = self
     }
     
     func setView(_ view:CollectionViewCellProtocol) {
@@ -31,7 +32,6 @@ class CollectionViewCellViewModel : NSObject {
         
         guard let collectionViewCell = collectionViewCell ,
             let photo = photo,
-            let imageName = photo.imageName,
             let aperture = photo.aperture,
             let shutterSpeed = photo.shutterSpeed,
             let iso = photo.iso,
@@ -39,9 +39,18 @@ class CollectionViewCellViewModel : NSObject {
                 return
         }
         
-        collectionViewCell.loadImage(resourceName: imageName)
+        collectionViewCell.updateImage(image: photo.downloadedImage)
         collectionViewCell.setCaption(captionText: comments)
         collectionViewCell.setShotDetails(shotDetailsText: "\(aperture), \(shutterSpeed), ISO \(iso)")
     }
     
+}
+
+
+extension CollectionViewCellViewModel : DownloadListenerProtocol {
+    func didDownloadImage() -> Void {
+        DispatchQueue.main.async {
+            self.collectionViewCell?.updateImage(image: self.photo?.downloadedImage)
+        }
+    }
 }

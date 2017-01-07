@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CollectionViewCellProtocol : class {
-    func loadImage(resourceName:String)
     func setCaption(captionText:String)
     func setShotDetails(shotDetailsText:String)
+    func updateImage(image:UIImage?)
 }
